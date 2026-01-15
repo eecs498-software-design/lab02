@@ -49,7 +49,7 @@ class BankAccount {
 
   balance(): number {
     // TODO
-    return this.balanceCents;
+    return 0;
   }
 
   deposit(cents: number): void {
@@ -180,6 +180,39 @@ function runInterfaces() {
   runTask(c, logger, 3); // expect: logs [t=1234567890] count=3
   console.log("final:", c.value()); // expect: 3
 }
+
+/**
+ * STRETCH EXERCISE:
+ * Implement additional Counter and Logger implementations to demonstrate
+ * the power of interface-based design.
+ *
+ * Suggested implementations:
+ *
+ * Counters:
+ *   - StepCounter: increments by a configurable step size (e.g., 2, 5, 10)
+ *   - BoundedCounter: has a maximum value and wraps around when exceeded
+ *   - NegativeCounter: can count backwards (decrement) as well as forwards
+ *   - ResettableCounter: extends Counter with a reset() method
+ *
+ * Loggers:
+ *   - FileLogger: writes logs to a file (or simulates it with console.log)
+ *   - PrefixLogger: adds a configurable prefix to all log messages
+ *   - SilentLogger: implements Logger but does nothing (useful for testing)
+ *   - MultiLogger: logs to multiple loggers simultaneously
+ *
+ * Testing:
+ *   - Create instances of your new Counter and Logger implementations
+ *   - Test that runTask works with ALL combinations:
+ *     - runTask(new SimpleCounter(), new ConsoleLogger(), 5)
+ *     - runTask(new StepCounter(2), new PrefixLogger("DEBUG"), 3)
+ *     - runTask(new BoundedCounter(10), new FileLogger(), 15)
+ *     - ... and so on
+ *
+ * The key insight:
+ *   Because runTask depends only on the Counter and Logger interfaces,
+ *   it works with ANY implementation without modification. This is the
+ *   power of polymorphism and interface-based design!
+ */
 
 function main() {
   runBankAccount();

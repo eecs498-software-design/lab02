@@ -1,6 +1,7 @@
 primitive: 10 15
 alias: 15 15
 mutateBox: 107
+reassignBoxLocal: box { value: 107 }
 reassignBoxLocal: 100
 swapValuesInPlace: 2 1
 original owner: Ada

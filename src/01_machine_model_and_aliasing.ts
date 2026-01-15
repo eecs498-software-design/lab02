@@ -51,8 +51,6 @@ function makeBox(v: number): Box {
  */
 function mutateBox(box: Box, delta: number): void {
   // TODO: mutate the object (do not reassign the parameter)
-  void box;
-  void delta;
 }
 
 /**
@@ -74,8 +72,6 @@ function mutateBox(box: Box, delta: number): void {
  */
 function reassignBoxLocal(box: Box, delta: number): void {
   // TODO: reassign local param; do NOT mutate the original caller object
-  void box;
-  void delta;
 }
 
 /**
@@ -92,8 +88,6 @@ function reassignBoxLocal(box: Box, delta: number): void {
  */
 function swapValuesInPlace(a: Box, b: Box): void {
   // TODO: swap a.value and b.value
-  void a;
-  void b;
 }
 
 function runMachineModel() {
@@ -156,7 +150,7 @@ function makeCart(owner: string, items: Item[]): Cart {
  * but mutating `copy.items[0].priceCents += 1` SHOULD affect the original (shared Item object).
  */
 function shallowCopyCart(cart: Cart): Cart {
-  // TODO: return { owner: cart.owner, items: ??? }
+  // TODO: return a new cart with a new array of items
   return cart; // WRONG on purpose: alias bug
 }
 
@@ -187,8 +181,6 @@ function deepCopyCart(cart: Cart): Cart {
  * Hint: Create a deep copy first, then modify the copy.
  */
 function applyDiscountSafe(cart: Cart, percent: number): Cart {
-  void percent;
-
   // WRONG on purpose: mutates the input cart
   for (const item of cart.items) {
     item.priceCents = Math.round(item.priceCents * 0.9);

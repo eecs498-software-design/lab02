@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //                                                                            //
-// isAllowed() Example 1 - Messy, Hardcoded Logic                             //
+// isAllowed() Example 1 - Messy, Fragile Logic                               //
 //                                                                            //
 // This version works (I think?), but the design is messy and fragile.        //
 // The resource access logic is implemented through conditionals, but         //

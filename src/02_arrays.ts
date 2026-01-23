@@ -133,6 +133,7 @@ function main() {
   // Remove a contiguous range (pure, slice-based)
   const r = [10, 20, 30, 40, 50];
   const r2 = removeRangePure(r, 1, 4);
+  console.log("original r:", r.join(","));
   console.log("removeRangePure:", r2.join(",")); // expect: 10,50
   console.log("r unchanged:", r.join(",")); // expect: 10,20,30,40,50
 }

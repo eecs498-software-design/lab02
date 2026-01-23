@@ -75,6 +75,25 @@ function removeElements(xs: number[], indices: number[]): number[] {
   return xs;
 }
 
+// EXERCISE 7: removeRangePure should return a NEW array with the range [start, end) removed.
+//
+// Example:
+//   removeRangePure([10,20,30,40,50], 1, 4) -> [10,50]
+//
+// Requirements:
+//   - must NOT mutate xs
+//   - must treat end as exclusive (like slice)
+//
+// Hint:
+//   Combine slices: xs.slice(0, start) and xs.slice(end)
+function removeRangePure(xs: number[], start: number, end: number): number[] {
+ // TODO: return a new array without mutating xs
+ // WRONG on purpose: splice mutates xs
+ xs.splice(start, end - start);
+ return xs;
+}
+
+
 function main() {
   const a = [1, 2, 3];
   const b = appendPure(a, 4);
@@ -110,6 +129,14 @@ function main() {
   const removed = removeElements(i, [1, 3]);
   console.log("removed indices 1,3:", removed.join(",")); // expect: 10,30,50
   console.log("i unchanged:", i.join(",")); // expect: 10,20,30,40,50
+
+  // Remove a contiguous range (pure, slice-based)
+  const r = [10, 20, 30, 40, 50];
+  const r2 = removeRangePure(r, 1, 4);
+  console.log("original r:", r.join(","));
+  console.log("removeRangePure:", r2.join(",")); // expect: 10,50
+  console.log("r unchanged:", r.join(",")); // expect: 10,20,30,40,50
 }
+// test
 
 main();

@@ -111,5 +111,6 @@ function main() {
   console.log("removed indices 1,3:", removed.join(",")); // expect: 10,30,50
   console.log("i unchanged:", i.join(",")); // expect: 10,20,30,40,50
 }
+// test
 
 main();
